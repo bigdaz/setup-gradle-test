@@ -1,0 +1,16 @@
+name: Build with setup-gradle
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: bigdaz/actions-repo-test@v0.0.1
+      with:
+        cache-read-only: true
+    - run: ./gradlew assemble
