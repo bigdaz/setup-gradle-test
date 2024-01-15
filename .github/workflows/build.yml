@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: bigdaz/actions-repo-test@v0.0.1
+    - uses: bigdaz/actions-repo-test@main
       with:
         cache-read-only: true
     - run: ./gradlew assemble
