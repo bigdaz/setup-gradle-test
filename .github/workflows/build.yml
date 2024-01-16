@@ -10,6 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: bigdaz/actions-repo-test/secondary@main
-    - uses: bigdaz/actions-repo-test/primary@main
+    - uses: gradle/actions@main
     - run: ./gradlew assemble
