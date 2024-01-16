@@ -1,0 +1,12 @@
+name: Generates and submits a dependency graph
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  dependency-submission:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: gradle/actions/dependency-submission@dd/composite-actions
