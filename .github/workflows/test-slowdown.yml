@@ -20,39 +20,9 @@ jobs:
     - uses: gradle/gradle-build-action@dd/bisect
     - run: ./gradlew assemble
 
-  build-v3-beta:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: gradle/gradle-build-action@v3-beta
-    - run: ./gradlew assemble
-
   build-v3-beta-1:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: gradle/gradle-build-action@v3.0.0-beta.1
-    - run: ./gradlew assemble
-
-  build-v3-beta-2:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: gradle/gradle-build-action@v3.0.0-beta.2
-    - run: ./gradlew assemble
-
-  build-v3-beta-3:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: gradle/gradle-build-action@v3.0.0-beta.3
-    - run: ./gradlew assemble
-
-  build-cache-read-only:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: gradle/gradle-build-action@v3-beta
-      with:
-        cache-read-only: true
     - run: ./gradlew assemble
