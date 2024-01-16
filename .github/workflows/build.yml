@@ -11,4 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: gradle/actions/setup-gradle@dd/composite-actions
+      with:
+        cache-read-only: true
     - run: ./gradlew assemble
