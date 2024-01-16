@@ -1,0 +1,13 @@
+name: Attempt to use top-level action
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: gradle/actions@dd/composite-actions
