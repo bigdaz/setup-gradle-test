@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: gradle/actions/setup-gradle@v3
+    - uses: gradle/actions/setup-gradle@release/fail-with-arguments
       with:
         arguments: assemble
     # - run: ./gradlew assemble
