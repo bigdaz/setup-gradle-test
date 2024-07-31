@@ -6,11 +6,19 @@ on:
 
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
-    - uses: gradle/actions/setup-gradle@release/better-args-message
+    - uses: actions/setup-java@v4
       with:
-        arguments: assemble
-    # - run: ./gradlew assemble
+        distribution: temurin
+        java-version: 17
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@main
+
+    - name: Execute Gradle build
+      run: ./gradlew build
