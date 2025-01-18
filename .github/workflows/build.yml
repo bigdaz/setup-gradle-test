@@ -8,7 +8,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
@@ -21,7 +21,10 @@ jobs:
       uses: gradle/actions/setup-gradle@release/toolchains-xml
 
     - name: Print toolchains.xml
-      run: cat /home/runner/.m2/toolchains.xml
+      run: cat $HOME/.m2/toolchains.xml
 
     - name: Execute Gradle build
+      run: ./gradlew build
+
+    - name: Print Gradle toolchains
       run: ./gradlew --info javaToolchains
