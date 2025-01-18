@@ -20,8 +20,10 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@release/toolchains-xml
 
-    - name: Print toolchains.xml
-      run: cat $HOME/.m2/toolchains.xml
+    - name: Print env & toolchains.xml
+      run: |
+        env | grep '^JAVA'
+        cat $HOME/.m2/toolchains.xml
 
     - name: Execute Gradle build
       run: ./gradlew build
