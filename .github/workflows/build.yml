@@ -18,7 +18,7 @@ jobs:
         java-version: 17
 
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@main
+      uses: gradle/actions/setup-gradle@release/toolchains-xml
 
     - name: Print toolchains.xml
       run: cat /home/runner/.m2/toolchains.xml
