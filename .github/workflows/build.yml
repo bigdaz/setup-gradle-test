@@ -21,4 +21,4 @@ jobs:
       uses: gradle/actions/setup-gradle@main
 
     - name: Execute Gradle build
-      run: ./gradlew build
+      run: ./gradlew --info javaToolchains
