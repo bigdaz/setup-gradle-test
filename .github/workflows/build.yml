@@ -23,8 +23,8 @@ jobs:
         build-scan-publish: true
         build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
         build-scan-terms-of-use-agree: "yes"
-        gradle-version: "8.13-20250123003013+0000"
-
+        gradle-version: "8.13-20250121001720+0000"
+        
     - name: Print env & toolchains.xml
       run: |
         env | grep '^JAVA'
