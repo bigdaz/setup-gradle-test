@@ -17,6 +17,9 @@ jobs:
         distribution: temurin
         java-version: 21
 
+    - name: Print Gradle location on PATH
+      run: which 'gradle'
+
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@release/use-wrapper-for-cleanup
       with:
