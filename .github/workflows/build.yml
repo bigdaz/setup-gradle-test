@@ -33,3 +33,6 @@ jobs:
 
     - name: Execute Gradle build
       run: ./gradlew build
+
+    - name: Execute Gradle build with 8.12 (not wrapper)
+      run: /usr/bin/gradle build
