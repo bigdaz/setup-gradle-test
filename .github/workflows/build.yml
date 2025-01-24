@@ -18,23 +18,15 @@ jobs:
         java-version: 21
 
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@main
+      uses: gradle/actions/setup-gradle@release/use-wrapper-for-cleanup
       with:
         build-scan-publish: true
         build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
         build-scan-terms-of-use-agree: "yes"
-        gradle-version: "8.13"
-        
-    - name: Print env & toolchains.xml
-      run: |
-        env | grep '^JAVA'
-        cat $HOME/.m2/toolchains.xml
+        gradle-version: "8.10"
 
     - name: Print provisioned version
       run: gradle --version
 
     - name: Execute Gradle build
       run: ./gradlew build
-
-    - name: Print Gradle toolchains
-      run: ./gradlew --info javaToolchains
