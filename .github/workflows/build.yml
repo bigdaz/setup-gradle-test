@@ -17,22 +17,12 @@ jobs:
         distribution: temurin
         java-version: 21
 
-    - name: Print Gradle location on PATH
-      run: which 'gradle'
-
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@release/use-wrapper-for-cleanup
+      uses: gradle/actions/setup-gradle@v4
       with:
         build-scan-publish: true
         build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
         build-scan-terms-of-use-agree: "yes"
-        gradle-version: "8.12"
-
-    - name: Print provisioned version
-      run: gradle --version
 
     - name: Execute Gradle build
       run: ./gradlew build
-
-    - name: Execute Gradle build with 8.12 (not wrapper)
-      run: /usr/bin/gradle build
