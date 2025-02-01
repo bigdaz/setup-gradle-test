@@ -24,7 +24,7 @@ jobs:
         build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
         build-scan-terms-of-use-agree: "yes"
       env:
-        GRADLE_BUILD_ACTION_CACHE_KEY_PREFIX: "A-very-long-prefix-that-should-make-the-key-too-long-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        GRADLE_BUILD_ACTION_CACHE_KEY_PREFIX: "A-very-long-prefix-that-should-make-the-key-too-long-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-"
 
     - name: Execute Gradle build
       run: ./gradlew build
